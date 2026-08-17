@@ -1,0 +1,134 @@
+{
+  "experiment": {
+    "name": "S12 / S20 acoustic screen engineering translation V1",
+    "method": "Analytical / Semi-empirical Acoustic Performance Evaluation",
+    "scope": "Simplified free-field theoretical engineering screening calculation",
+    "not_in_scope": [
+      "COMSOL",
+      "finite element simulation",
+      "FDTD",
+      "BEM",
+      "full room acoustic simulation",
+      "laboratory validation",
+      "VIKOR recalculation"
+    ]
+  },
+  "air": {
+    "temperature_C": 20.0,
+    "air_density_kg_m3": 1.204,
+    "speed_of_sound_m_s": 343.2,
+    "reference_pressure_Pa": 0.00002
+  },
+  "frequencies_hz": [125, 160, 200, 250, 315, 400, 500, 630, 800, 1000],
+  "screen_common": {
+    "number_of_panels": 6,
+    "panel_width_m": 0.4,
+    "panel_height_m": 1.8,
+    "panel_thickness_m": 0.07,
+    "bottom_clearance_m": 0.02,
+    "top_height_m": 1.82,
+    "total_developed_width_m": 2.4,
+    "frame_width_m": 0.035,
+    "rigid_core_thickness_m": 0.01,
+    "porous_layer_front_m": 0.03,
+    "porous_layer_back_m": 0.03,
+    "one_face_area_m2": 4.32,
+    "two_faces_area_m2": 8.64,
+    "units": "SI"
+  },
+  "candidates": {
+    "S12": {
+      "source_design": "B2_seed42",
+      "adjacent_turn_angle_deg": 30.0,
+      "equivalent_internal_angle_deg": 150.0,
+      "source_file": "D:/AI/experiments/chinesetradscreen_sd15_lora_v1/candidate_generation_e09/images/B2/B2_seed42.png",
+      "source_sha256": "45d239b36212a4bbc323a877e96b096659292141db2800be9aae549121f43113"
+    },
+    "S20": {
+      "source_design": "C2_seed42",
+      "adjacent_turn_angle_deg": 12.0,
+      "equivalent_internal_angle_deg": 168.0,
+      "source_file": "D:/AI/experiments/chinesetradscreen_sd15_lora_v1/candidate_generation_e09/images/C2/C2_seed42.png",
+      "source_sha256": "b43177e6349f59c0b5e20ccb4f1b7b77d2bbe19c00120ddcb8cad9c50759e6f7"
+    }
+  },
+  "geometry_coordinate_system": {
+    "x": "source-to-receiver direction [m]",
+    "y": "screen lateral direction [m]",
+    "z": "vertical direction [m]",
+    "panel_orientation_rule": "+theta/2, -theta/2, +theta/2, -theta/2, +theta/2, -theta/2 relative to +y",
+    "centering_rule": "mean vertex x = 0; midpoint of min/max vertex y = 0"
+  },
+  "source": {
+    "id": "Source",
+    "coordinates_m": [-1.5, 0.0, 1.2],
+    "absolute_sound_level_assigned": false
+  },
+  "receivers": [
+    {"id": "R1", "coordinates_m": [1.5, -0.8, 1.2]},
+    {"id": "R2", "coordinates_m": [1.5, -0.4, 1.2]},
+    {"id": "R3", "coordinates_m": [1.5, 0.0, 1.2]},
+    {"id": "R4", "coordinates_m": [1.5, 0.4, 1.2]},
+    {"id": "R5", "coordinates_m": [1.5, 0.8, 1.2]}
+  ],
+  "miki_model": {
+    "reference": "Miki (1990), DOI 10.1250/ast.11.19",
+    "time_convention": "exp(+j*omega*t)",
+    "dimensionless_X": "1000*f/sigma",
+    "characteristic_impedance": "rho0*c0*[1 + 5.50*X^(-0.632) - j*8.43*X^(-0.632)]",
+    "complex_wavenumber": "omega/c0*[1 + 7.81*X^(-0.618) - j*11.41*X^(-0.618)]",
+    "rigid_backed_surface_impedance": "-j*Zc/tan(kc*d)",
+    "reflection_coefficient": "(Zs-rho0*c0)/(Zs+rho0*c0)",
+    "normal_incidence_absorption": "1-|R|^2",
+    "coefficients": {
+      "Zc_real": 5.5,
+      "Zc_imaginary": 8.43,
+      "Zc_exponent": -0.632,
+      "kc_real": 7.81,
+      "kc_imaginary": 11.41,
+      "kc_exponent": -0.618
+    },
+    "baseline_flow_resistivity_Pa_s_m2": 12000.0,
+    "sensitivity_flow_resistivities_Pa_s_m2": [8000.0, 12000.0, 16000.0],
+    "porous_layer_thickness_m": 0.03,
+    "numeric_dtype": "complex128"
+  },
+  "diffraction_model": {
+    "name": "Kurze-Anderson-type dominant minimum-diffracted-path approximation",
+    "reference": "Kurze and Anderson (1971), DOI 10.1016/0003-682X(71)90024-7",
+    "finite_barrier_context": "Minimum diffracted path concept informed by Lam (1994), not a complete reproduction",
+    "distance_model": "3D Euclidean point-to-edge path minimized over each finite line segment",
+    "candidate_edges": "6 top panel edges + 6 bottom panel edges + 2 outer vertical edges",
+    "edge_count": 14,
+    "optimizer": "scipy.optimize.minimize_scalar, bounded t in [0,1]",
+    "path_difference": "delta = L_diffracted - L_direct",
+    "wavelength": "lambda = c0/f",
+    "fresnel_number": "N = 2*delta/lambda = 2*f*delta/c0",
+    "insertion_loss_db": "IL = 5 + 20*log10(sqrt(2*pi*N)/tanh(sqrt(2*pi*N)))",
+    "small_N_limit": "IL = 5 dB when N < 1e-12",
+    "blocked_false_rule": "IL = 0 dB",
+    "il_cap_db": null,
+    "receiver_std_ddof": 0,
+    "omitted_physics": [
+      "multiple-edge diffraction",
+      "phase-coherent summation",
+      "ground reflection",
+      "room-wall reflection",
+      "scattering prediction",
+      "transmission through panels",
+      "structural vibration"
+    ]
+  },
+  "validation": {
+    "miki_reference_alpha": {"125": 0.027, "500": 0.215, "1000": 0.515},
+    "miki_absolute_tolerance": 0.01,
+    "kurze_test_delta_m": 0.246,
+    "kurze_test_frequency_hz": 500.0,
+    "kurze_expected_il_db": 11.78,
+    "kurze_tolerance_db": 0.05,
+    "geometry_length_tolerance_m": 1e-09,
+    "negative_delta_error_threshold_m": -1e-09,
+    "high_il_warning_threshold_db": 30.0,
+    "descriptive_clear_difference_threshold_db": 1.0
+  }
+}

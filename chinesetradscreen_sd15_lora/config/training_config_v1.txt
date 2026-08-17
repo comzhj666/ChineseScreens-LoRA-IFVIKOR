@@ -1,0 +1,104 @@
+Experiment:
+Chinese Traditional Folding Screen SD1.5 LoRA V1
+
+Base model:
+Stable Diffusion v1.5
+
+Checkpoint:
+v1-5-pruned-emaonly.safetensors
+
+Base model SHA256:
+6ce0161689b3853acaa03779ec93eafe75a02f4ced659bee03f50797806fa2fa
+
+Dataset:
+76 images
+
+Trigger:
+chinesetradscreen
+
+Resolution:
+512
+
+Aspect ratio bucketing:
+true
+
+Bucket no upscale:
+true
+
+Bucket range:
+256-1024
+
+Bucket steps:
+64
+
+Batch size:
+1
+
+Dataset repeats:
+1
+
+Epochs:
+15
+
+Expected optimizer steps:
+approximately 1140
+
+LoRA type:
+LoRA-LierLa / networks.lora
+
+Network dim:
+8
+
+Network alpha:
+8
+
+Training modules:
+U-Net LoRA only
+
+U-Net LR:
+1e-4
+
+Optimizer:
+AdamW8bit
+
+LR scheduler:
+constant
+
+Gradient accumulation:
+1
+
+Mixed precision:
+fp16
+
+Gradient checkpointing:
+true
+
+Cache latents:
+true
+
+Attention:
+SDPA
+
+Seed:
+42
+
+Checkpoint interval:
+3 epochs
+
+Text Encoder LoRA:
+not trained in V1
+
+xformers:
+not installed / not used
+
+sd-scripts:
+v0.11.1
+
+sd-scripts commit:
+6721028c79ee85a78b3a06dfd8954dae310a1cce
+
+GPU:
+NVIDIA GeForce RTX 3050 Laptop GPU
+
+VRAM:
+4 GB

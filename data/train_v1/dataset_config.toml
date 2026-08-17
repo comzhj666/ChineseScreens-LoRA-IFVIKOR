@@ -1,0 +1,17 @@
+[general]
+caption_extension = ".txt"
+shuffle_caption = true
+keep_tokens = 1
+
+[[datasets]]
+resolution = 512
+batch_size = 1
+enable_bucket = true
+bucket_no_upscale = true
+min_bucket_reso = 256
+max_bucket_reso = 1024
+bucket_reso_steps = 64
+
+  [[datasets.subsets]]
+  image_dir = "E:/Desktop/论文写作/屏风-文化遗产-计算机交叉-张方瑾老师/实验/data/train_v1/images"
+  num_repeats = 1

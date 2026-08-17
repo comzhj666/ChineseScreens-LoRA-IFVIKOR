@@ -1,0 +1,69 @@
+Experiment:
+SD1.5 LoRA V1 checkpoint fixed-condition comparison generation
+
+Base checkpoint:
+D:\AI\models\sd15\v1-5-pruned-emaonly.safetensors
+
+LoRA checkpoints:
+Epoch 3: D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1-000003.safetensors
+Epoch 6: D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1-000006.safetensors
+Epoch 9: D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1-000009.safetensors
+Epoch 12: D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1-000012.safetensors
+Epoch 15: D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1.safetensors
+
+LoRA multiplier:
+1.0
+
+Prompt P1:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, overall view
+
+Prompt P2:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, overall frontal view, clear panel divisions, continuous composition
+
+Prompt P3:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, three-quarter angled view, standing in a simple interior
+
+Base prompt rule:
+Remove only the leading chinesetradscreen item; retain all remaining text unchanged.
+
+Negative prompt:
+cropped, close-up, incomplete screen, deformed structure, broken frame, duplicated structure, text, watermark, blurry, low quality
+
+Width:
+512
+
+Height:
+512
+
+Sampler:
+euler_a
+
+Steps:
+30
+
+CFG:
+7.0
+
+Seeds:
+42, 1234
+
+Batch size:
+1
+
+Precision:
+fp16
+
+Attention:
+SDPA
+
+Python:
+D:\app_down\anaconda\envs\sd15_lora\python.exe
+
+sd-scripts version:
+v0.11.1 (commit 6721028c79ee85a78b3a06dfd8954dae310a1cce)
+
+GPU:
+NVIDIA GeForce RTX 3050 Laptop GPU, 4 GB VRAM
+
+Generation date:
+2026-08-15T04:54:13+08:00

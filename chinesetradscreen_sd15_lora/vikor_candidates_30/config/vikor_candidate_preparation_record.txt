@@ -1,0 +1,33 @@
+﻿Total original generated candidates = 240
+Selected candidates = 30
+Anonymous IDs = S01-S30
+Application target =
+Independent standing / foldable multi-panel acoustic screen for modern indoor public spaces
+
+Evaluation criteria =
+C1 Cultural Heritage Retention
+C2 Aesthetic Harmony
+C3 Contemporary Design Innovation
+C4 Structural Feasibility
+C5 Acoustic Partition Translation Potential
+
+Rating scale =
+1-5
+
+Intuitionistic fuzzy mapping =
+1 -> (0.15, 0.80)
+2 -> (0.25, 0.65)
+3 -> (0.50, 0.40)
+4 -> (0.75, 0.15)
+5 -> (0.85, 0.10)
+
+Randomization seed = 42
+
+Preparation date =
+2026-08-15T08:21:37+08:00
+
+Protection record =
+- No original image among the 240 candidates was deleted.
+- No original image was modified.
+- VIKOR calculation was not started.
+- No fabricated evaluation data was entered.

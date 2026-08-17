@@ -1,0 +1,24 @@
+# Dataset configuration for SDXL 1.0 Base LoRA using sd-scripts.
+# Captions are mirrored beside images because sd-scripts expects same-basename .txt files.
+
+[general]
+caption_extension = ".txt"
+shuffle_caption = false
+keep_tokens = 1
+
+[[datasets]]
+# TODO: decide after GPU check; 1024 is the SDXL-native placeholder.
+resolution = 1024
+# TODO: decide after GPU check.
+batch_size = 1
+enable_bucket = true
+bucket_no_upscale = true
+min_bucket_reso = 256
+max_bucket_reso = 2048
+bucket_reso_steps = 64
+
+  [[datasets.subsets]]
+  image_dir = "E:/Desktop/论文写作/屏风-文化遗产-计算机交叉-张方瑾老师/实验/data/train_v1/images"
+  # TODO: decide after GPU check and experiment design.
+  num_repeats = 1
+  caption_extension = ".txt"

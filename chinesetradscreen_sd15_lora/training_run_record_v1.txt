@@ -1,0 +1,100 @@
+Experiment:
+Chinese Traditional Folding Screen SD1.5 LoRA V1
+
+Status:
+completed
+
+Start time:
+2026-08-15 04:18:30+08:00
+
+End time:
+2026-08-15 04:31:44+08:00
+
+Training duration:
+0:13:14 (end-to-end launcher duration; training loop reported 00:11:54)
+
+GPU:
+NVIDIA GeForce RTX 3050 Laptop GPU
+
+VRAM:
+4 GB
+
+Base model:
+Stable Diffusion v1.5
+
+Base checkpoint:
+v1-5-pruned-emaonly.safetensors
+
+Dataset:
+76 images
+
+Resolution:
+512 with aspect-ratio bucketing
+
+Network dim:
+8
+
+Network alpha:
+8
+
+Training module:
+U-Net LoRA only
+
+Optimizer:
+AdamW8bit
+
+UNet learning rate:
+1e-4
+
+Scheduler:
+constant
+
+Epochs planned:
+15
+
+Epochs completed:
+15
+
+Optimizer steps:
+1140
+
+Mixed precision:
+fp16
+
+Attention:
+SDPA
+
+Gradient checkpointing:
+true
+
+Cache latents:
+true
+
+Seed:
+42
+
+Peak VRAM:
+3253 MiB observed by periodic nvidia-smi sampling (not device peak telemetry)
+
+Final loss:
+0.154468969 (epoch-15 average; console rounded value 0.154)
+
+Loss descriptive statistics:
+Initial (steps 1-380): min=0.001651660, max=0.962120414, mean=0.159561910, median=0.092901170
+Middle (steps 381-760): min=0.002020779, max=0.948510468, mean=0.155435190, median=0.086613759
+Final (steps 761-1140): min=0.001823715, max=0.950149477, mean=0.141070681, median=0.068738688
+NaN count: 0
+Inf count: 0
+
+Checkpoints:
+Epoch 3: chinesetradscreen_sd15_lora_v1-000003.safetensors | 6872472 bytes | SHA256 aef86acb635b8ab01b287ca5b24f1629d2575405a053499f4e377ea382b8ecef
+Epoch 6: chinesetradscreen_sd15_lora_v1-000006.safetensors | 6872472 bytes | SHA256 1824ca90d6f28859c63b3172142d85a4e34a49b97e32bc0fd2b7d3cbd0120c97
+Epoch 9: chinesetradscreen_sd15_lora_v1-000009.safetensors | 6872472 bytes | SHA256 e236e70cb149bce162f59d1d6c801d67cb1c0f29d242c7da234695db454a0368
+Epoch 12: chinesetradscreen_sd15_lora_v1-000012.safetensors | 6872472 bytes | SHA256 75928d58bdabfdccc30a191ebccce1b54283301af2649c577396026cd6e7858e
+Epoch 15 / final: chinesetradscreen_sd15_lora_v1.safetensors | 6872472 bytes | SHA256 2ff0cb8add0e1c051d08e75646644a65cc54f7bc503caf3cae6481b1a1d355b6
+
+Errors:
+None
+
+Post-training process status:
+Training process terminated normally. No residual Python training process detected.

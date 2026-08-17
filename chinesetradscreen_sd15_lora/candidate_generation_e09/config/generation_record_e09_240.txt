@@ -1,0 +1,107 @@
+Experiment:
+Chinese Traditional Folding Screen Candidate Generation E09
+
+Base model:
+D:\AI\models\sd15\v1-5-pruned-emaonly.safetensors
+
+LoRA checkpoint:
+D:\AI\experiments\chinesetradscreen_sd15_lora_v1\models\chinesetradscreen_sd15_lora_v1-000009.safetensors
+
+LoRA multiplier:
+0.9
+
+Resolution:
+512 x 512
+
+Sampler:
+euler_a
+
+Steps:
+30
+
+CFG:
+7.0
+
+Batch size:
+1
+
+Precision:
+fp16
+
+Attention:
+SDPA
+
+Seeds:
+42, 1234, 2026, 7, 77, 314, 512, 888, 1024, 2048, 4096, 6060, 8080, 10001, 13579, 22222, 31415, 42424, 54321, 65000
+
+Negative prompt:
+cropped, close-up, incomplete screen, deformed structure, broken frame, duplicated structure, text, watermark, blurry, low quality
+
+Prompt A1:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, overall frontal view, continuous composition, elegant traditional decorative design
+
+Prompt A2:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, painted landscape panels, calligraphy accents, overall frontal view, balanced composition
+
+Prompt A3:
+chinesetradscreen, traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, traditional decorative border, refined painted composition, overall view
+
+Prompt B1:
+chinesetradscreen, modern reinterpretation of a traditional Chinese folding screen, multi-panel screen, complete screen, wooden frame, simplified decorative language, clean lines, overall frontal view
+
+Prompt B2:
+chinesetradscreen, minimalist traditional Chinese folding screen, multi-panel screen, complete screen, elegant wooden frame, reduced ornament, contemporary design expression, overall view
+
+Prompt B3:
+chinesetradscreen, modern decorative folding screen inspired by traditional Chinese screen design, multi-panel screen, complete screen, simplified continuous landscape motif, balanced modern form
+
+Prompt C1:
+chinesetradscreen, contemporary Chinese folding screen, multi-panel screen, complete screen, wooden frame, abstracted mountain-and-water motif, refined composition, overall frontal view
+
+Prompt C2:
+chinesetradscreen, contemporary reinterpretation of a traditional Chinese folding screen, multi-panel screen, complete screen, geometric simplification, rhythmic panel divisions, elegant overall composition
+
+Prompt C3:
+chinesetradscreen, modern Chinese folding screen, multi-panel screen, complete screen, semi-abstract painted composition, elegant panel rhythm, refined decorative design
+
+Prompt D1:
+chinesetradscreen, contemporary folding screen design, multi-panel screen, complete screen, wooden frame, standing in a contemporary interior, elegant presentation, three-quarter angled view
+
+Prompt D2:
+chinesetradscreen, decorative partition screen inspired by traditional Chinese folding screen, multi-panel structure, complete screen, modern interior setting, refined overall composition
+
+Prompt D3:
+chinesetradscreen, modern interior divider inspired by traditional Chinese folding screen, multi-panel screen, complete screen, Chinese traditional visual language, refined contemporary design, angled view
+
+Python:
+D:\app_down\anaconda\envs\sd15_lora\python.exe
+
+sd-scripts:
+D:\AI\sd-scripts
+
+Version:
+v0.11.1 (commit 6721028c79ee85a78b3a06dfd8954dae310a1cce)
+
+GPU:
+NVIDIA GeForce RTX 3050 Laptop GPU, 4 GB VRAM
+
+Generation date:
+2026-08-15T05:49:58+08:00
+
+Status:
+failed
+
+Generated images recorded:
+75
+
+Resume note:
+The first orchestration pass stopped because the manifest watcher read a PNG while it was still being written (transient incomplete IDAT checksum). The generator itself completed B1. Existing A1-B1 images are preserved and skipped; parameters are unchanged.
+
+Status:
+completed
+
+Generated images:
+240
+
+Generation duration seconds:
+1500.9
